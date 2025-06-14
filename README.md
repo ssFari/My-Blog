@@ -23,4 +23,4 @@ This project is a web application named "writings.dev," designed to showcase a c
 This project was developed as part of a learning journey following the Full-Stack Developer Roadmap on [roadmap.sh/full-stack](https://roadmap.sh/full-stack). It serves as a practical application of fundamental front-end development skills, including HTML structure, CSS styling, and interactive JavaScript functionalities.
 
 ##Preview Web
-https://ssfari.github.io/my-blog
+https://ssfari.github.io/My-Blog
