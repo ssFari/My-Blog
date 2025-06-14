@@ -1,0 +1,218 @@
+.create-post {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 2rem;
+    box-sizing: border-box;
+}
+
+.create-post .create-post-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 1.5rem 0.5rem;
+    font-weight: 700;
+}
+
+.create-post .create-post-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.create-post .create-post-form .form-group,
+.create-post .create-post-form .form-group-editor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.create-post .create-post-form .form-group-editor.row-line {
+    height: fit-content;
+
+    padding: 1rem;
+    background-image: repeating-linear-gradient(
+        315deg,
+        var(--pattern-fg, rgba(255, 255, 255, 0.1)) 0,
+        var(--pattern-fg, rgba(255, 255, 255, 0.1)) 1px,
+        transparent 0,
+        transparent 50%
+    );
+    background-size: 10px 10px;
+    background-attachment: fixed;
+    --pattern-fg: rgba(255, 255, 255, 0.1);
+}
+
+/* Quill Editor Styling */
+.create-post .create-post-form .form-group .quill-editor-container {
+    width: 100%;
+}
+
+#quill-editor {
+    width: 100%;
+    min-height: 300px;
+    height: fit-content;
+    position: relative;
+}
+
+.ql-toolbar.ql-snow {
+    border-radius: 10px 10px 0 0;
+    border: none !important;
+    background: var(--primary-color) !important;
+    outline: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-color) !important;
+    font-family: inherit;
+}
+
+.ql-container.ql-snow {
+    border-radius: 0 0 10px 10px;
+    border: none !important;
+    background: var(--primary-color) !important;
+    outline: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-color) !important;
+
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.ql-editor {
+    height: 100%;
+    min-height: 100px;
+    padding: 1rem;
+}
+
+.ql-toolbar button,
+.ql-snow .ql-stroke,
+.ql-snow .ql-fill {
+    border: none !important;
+    background: transparent !important;
+    color: var(--text-secondary-color) !important;
+    stroke: var(--text-secondary-color) !important;
+}
+
+.ql-toolbar .ql-picker-label {
+    border: none !important;
+    background: var(--primary-color) !important;
+    color: var(--text-secondary-color) !important;
+    stroke: var(--text-secondary-color) !important;
+}
+
+.ql-toolbar .ql-formats {
+    outline: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.ql-editor a {
+    color: var(--text-color) !important;
+    text-decoration: underline;
+}
+
+.ql-editor h1,
+.ql-editor h2 {
+    color: var(--text-color) !important;
+    font-family: var(--font-poppins);
+    font-weight: 700;
+}
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+    background: var(--primary-color) !important;
+    color: var(--text-secondary-color) !important;
+    border: none !important;
+    outline: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.ql-toolbar button:hover,
+.ql-toolbar .ql-picker-label:hover,
+.ql-toolbar .ql-picker-label:hover .ql-stroke,
+.ql-toolbar button.ql-active,
+.ql-toolbar button:hover .ql-stroke,
+.ql-toolbar button:hover .ql-fill,
+.ql-toolbar button.ql-active > .ql-fill,
+.ql-toolbar button.ql-active > .ql-stroke {
+    border: none !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-color) !important;
+    stroke: var(--text-color) !important;
+}
+
+.ql-snow .ql-picker-options .ql-picker-item:hover {
+    border: none !important;
+    color: var(--text-color) !important;
+    stroke: var(--text-color) !important;
+}
+
+.ql-snow .ql-editor pre.ql-syntax {
+    color: var(--text-color) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+code {
+    color: var(--text-color) !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+.form-group .form-control {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--primary-color);
+    color: var(--text-color);
+    font-family: inherit;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group .form-control:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+}
+
+/* Recreate the dropdown arrow icon */
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .form-group .form-control,
+    .create-post {
+        max-width: 100vw;
+    }
+    .create-post .create-post-title {
+        font-size: 1.7rem;
+    }
+}
+
+.form-group #imagePreview {
+    width: max-content;
+    max-height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    object-fit: contain;
+    border-radius: 12px;
+    padding: 0.5rem; /* 0.5rem = 8px */
+    overflow: hidden;
+    display: none;
+}
+
+.form-group #imagePreview img {
+    width: auto;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    object-fit: contain;
+}
+.form-group .remove-image {
+    width: max-content;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
