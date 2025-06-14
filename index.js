@@ -299,6 +299,19 @@ window.addEventListener("DOMContentLoaded", function () {
     document
         .getElementById("featuredImageInput")
         .addEventListener("input", updateImagePreview);
+
+    const removeImg = document.getElementById("removeImage");
+    removeImg.addEventListener("click", function () {
+        const input = document.getElementById("featuredImageInput");
+        const previewContainer = document.getElementById("imagePreview");
+        if (input) {
+            input.value = ""; // Clear the input value
+        }
+        if (previewContainer) {
+            previewContainer.innerHTML = ""; // Clear the preview container
+            previewContainer.style.display = "none"; // Hide the container
+        }
+    });
 });
 
 // Function to generate Navbar component

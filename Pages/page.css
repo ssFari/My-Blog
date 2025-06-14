@@ -172,6 +172,7 @@ code {
     transition: all 0.3s ease-in-out;
     font-size: 1rem;
     box-sizing: border-box;
+    appearance: none;
 }
 
 .form-group .form-control:focus {
@@ -224,4 +225,9 @@ code {
     padding: 1rem 1.5rem;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
+}
+
+.form-group .remove-image:hover {
+    background: var(--secondary-color);
+    cursor: pointer;
 }
