@@ -3,8 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../../index.css" />
-        <link rel="stylesheet" href="./../page.css" />
+        <link rel="stylesheet" href="../page.css" />
         <link rel="stylesheet" />
 
         <!-- Include the highlight.js library -->
@@ -24,8 +23,7 @@
 
         <!-- Highlight.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <script src="../../index.js"></script>
-        <script src="../../Components/component.js"></script>
+        <script src="../../../index.js"></script>
 
         <title>Create Post</title>
     </head>
@@ -92,22 +90,28 @@
                             <label class="form-label"
                                 >Featured Image URL:</label
                             >
-                            <input
-                                class="form-control"
-                                type="url"
-                                name="featuredImage"
-                                id="featuredImageInput"
-                                placeholder="Paste image URL here"
-                                oninput="updateImagePreview()"
-                            />
-                            <div id="imagePreview" style="margin-top: 10px">
-                                <img src="" alt="" />
+                            <div class="image-input-container">
+                                <input
+                                    class="form-control"
+                                    type="url"
+                                    name="featuredImage"
+                                    id="featuredImageInput"
+                                    placeholder="Paste image URL here"
+                                    oninput="updateImagePreview()"
+                                />
+                                <div class="remove-image">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </div>
                             </div>
+                            <div id="imagePreview"></div>
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Status:</label>
-                            <select class="form-control" name="status">
+                            <select
+                                class="form-control select-with-icons"
+                                name="status"
+                            >
                                 <option value="draft">Draft</option>
                                 <option value="published">Published</option>
                             </select>
@@ -117,60 +121,9 @@
                     </form>
                 </div>
 
-                <!-- Footer Section -->
                 <footer id="footer-container" class="footer row-line"></footer>
             </div>
             <div class="grid-col-theme-3"></div>
         </div>
-
-        <script src="../Components/component.js"></script>
-
-        <script>
-            // Inisialisasi Quill
-            const toolbarOptions = [
-                ["bold", "italic", "underline", "strike"], // toggled buttons
-                ["blockquote", "code-block"],
-                ["link", "image", "video", "formula"],
-
-                [{ header: 1 }, { header: 2 }], // custom button values
-                [{ list: "ordered" }, { list: "bullet" }, { list: "check" }],
-                [{ script: "sub" }, { script: "super" }], // superscript/subscript
-                [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
-                [{ direction: "rtl" }], // text direction
-
-                [{ size: ["small", false, "large", "huge"] }], // custom dropdown
-                [{ header: [1, 2, 3, 4, 5, 6, false] }],
-
-                [{ color: [] }, { background: [] }], // dropdown with defaults from theme
-                [{ font: [] }],
-                [{ align: [] }],
-
-                ["clean"], // remove formatting button
-            ];
-
-            const quill = new Quill("#quill-editor", {
-                theme: "snow",
-                modules: {
-                    syntax: {
-                        highlight: (text) => hljs.highlightAuto(text).value,
-                    }, // Aktifkan syntax highlighting bawaan Quill
-                    toolbar: toolbarOptions,
-                },
-            });
-
-            quill.on("text-change", () => {
-                const codeBlocks = document.querySelectorAll("pre code");
-                codeBlocks.forEach((block) => {
-                    hljs.highlightElement(block);
-                });
-            });
-
-            // Fungsi agar konten editor masuk ke input tersembunyi sebelum submit
-            function prepareContent() {
-                const html = quill.root.innerHTML;
-                document.getElementById("content").value = html;
-                return true; // lanjut submit
-            }
-        </script>
     </body>
 </html>

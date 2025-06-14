@@ -210,9 +210,18 @@ code {
     border-radius: 8px;
     object-fit: contain;
 }
+
+.form-group .image-input-container {
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .form-group .remove-image {
     width: max-content;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1);
 }
