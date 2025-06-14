@@ -358,7 +358,7 @@ function createFooter() {
     const logoImg = document.createElement("img");
     logoImg.id = "logo-img";
     logoImg.className = "footer-logo-img";
-    if (window.location.pathname.startsWith("/Pages/")) {
+    if (window.location.pathname.includes("/Pages/")) {
         logoImg.src = "/../Public/Assets/Logo.png";
     } else {
         logoImg.src = "Public/Assets/Logo.png";
