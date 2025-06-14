@@ -316,10 +316,10 @@ function createNavbar() {
     logoImg.className = "logo-img";
     // Dynamically set logo image source based on current path
     // If current path includes '/pages/', use relative path to root
-    if (window.location.pathname.startsWith("/pages/")) {
+    if (window.location.pathname.startsWith("/Pages/")) {
         logoImg.src = "/../Public/Assets/Logo.png";
     } else {
-        logoImg.src = "/Public/Assets/Logo.png";
+        logoImg.src = "Public/Assets/Logo.png";
     }
     const logoLink = document.createElement("a");
     logoLink.href = "/";
@@ -358,7 +358,7 @@ function createFooter() {
     const logoImg = document.createElement("img");
     logoImg.id = "logo-img";
     logoImg.className = "footer-logo-img";
-    if (window.location.pathname.startsWith("/pages/")) {
+    if (window.location.pathname.startsWith("/Pages/")) {
         logoImg.src = "/../Public/Assets/Logo.png";
     } else {
         logoImg.src = "Public/Assets/Logo.png";
@@ -438,10 +438,10 @@ function createFavicon() {
 
     const indexCSS = document.createElement("link");
     indexCSS.rel = "stylesheet";
-    if (window.location.pathname.startsWith("/pages/")) {
-        indexCSS.href = "index.css"; // Relative path for pages
+    if (window.location.pathname.startsWith("/Pages/")) {
+        indexCSS.href = "../../index.css"; // Relative path for pages
     } else {
-        indexCSS.href = "/index.css";
+        indexCSS.href = "index.css";
     }
 
     const fontAwesomeJS = document.createElement("script");
